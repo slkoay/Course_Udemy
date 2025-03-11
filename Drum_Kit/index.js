@@ -37,12 +37,15 @@ function playSound(keyvalue){
 
 
 for(i=0;i<all_button.length;i++){
-  all_button[i].addEventListener("click", playSound(this.innerHTML));
+  all_button[i].addEventListener("click", function(){
+    playSound(this.innerHTML);
+     
+  })};
 
   document.addEventListener("keypress", function(keyPressed){
     console.log(keyPressed.key);
     playSound(keyPressed.key)
   });
 
-};
+
 
