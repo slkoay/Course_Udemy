@@ -1,12 +1,8 @@
 var all_button = document.querySelectorAll("button");
 var audio = new Audio("./sounds/tom-1.mp3");
 
-for(i=0;i<all_button.length;i++){
-  all_button[i].addEventListener("click", function(){ 
-    //audio.play();
-    //console.log(this.innerHTML);
-
-    switch(this.innerHTML) {
+function playSound(keyvalue){
+   switch(keyvalue) {
   case "w":
     var tom1 = new Audio("./sounds/tom-1.mp3");
     tom1.play();    
@@ -36,13 +32,16 @@ for(i=0;i<all_button.length;i++){
     kick.play();    
     break;
   default:
-    console.log(this.innerHTML);
-}
-  
-  });
+    console.log(keyvalue);
+}};
+
+
+for(i=0;i<all_button.length;i++){
+  all_button[i].addEventListener("click", playSound(this.innerHTML));
 
   document.addEventListener("keypress", function(keyPressed){
     console.log(keyPressed.key);
+    playSound(keyPressed.key)
   });
 
 };
