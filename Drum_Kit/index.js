@@ -41,6 +41,9 @@ for(i=0;i<all_button.length;i++){
   
   });
 
+  document.addEventListener("keypress", keyPressed){
+    console.log(keyPressed);
+  };
 
 };
 
