@@ -24,19 +24,19 @@ for(i=0;i<all_button.length;i++){
     tom4.play();    
     break;
   case j:
-    var tom1 = new Audio("./sounds/tom-1.mp3");
-    tom1..play();    
+    var snare = new Audio("./sounds/snare.mp3");
+    snare.play();    
     break;
   case k:
-    var tom1 = new Audio("./sounds/tom-1.mp3");
-    tom1..play();    
+    var crash = new Audio("./sounds/crash.mp3");
+    crash.play();    
     break;
   case l:
-    var tom1 = new Audio("./sounds/tom-1.mp3");
-    tom1..play();    
+    var kick = new Audio("./sounds/kick-bass.mp3");
+    kick.play();    
     break;
   default:
-    // code block
+    console.log(this.innerHTML);
 }
   
   });
