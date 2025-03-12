@@ -45,7 +45,13 @@ for(i=0;i<all_button.length;i++){
   document.addEventListener("keypress", function(keyPressed){
     console.log(keyPressed.key);
     playSound(keyPressed.key);
+    btnAnimation(keyPressed.key);
   });
 
 
-
+function btnAnimation(currentKey){
+   var activeButton = document.querySelector("."+currentKey);
+   activeButton.classList.add("pressed");
+   activeButton.classList.toggle("pressed");
+   activeButton.classList.toggle("pressed");
+}
