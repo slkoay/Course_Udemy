@@ -39,6 +39,7 @@ function playSound(keyvalue){
 for(i=0;i<all_button.length;i++){
   all_button[i].addEventListener("click", function(){
     playSound(this.innerHTML);
+    btnAnimation(this.innerHTML);
     console.log(this.innerHTML);
   })};
 
