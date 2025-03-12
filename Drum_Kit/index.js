@@ -52,6 +52,10 @@ for(i=0;i<all_button.length;i++){
 function btnAnimation(currentKey){
    var activeButton = document.querySelector("."+currentKey);
    activeButton.classList.add("pressed");
-   setInterval(activeButton.classList.remove("pressed"), 500);
-   
+   setInterval(remove_class, 1000);
+
+   function remove_class()
+   {
+      activeButton.classList.remove("pressed");
+   }
 }
