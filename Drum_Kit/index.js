@@ -51,6 +51,5 @@ for(i=0;i<all_button.length;i++){
 
 function btnAnimation(currentKey){
    var activeButton = document.querySelector("."+currentKey);
-   activeButton.classList.add("pressed");
-   activeButton.classList.remove("pressed");
+   activeButton.classList.toggle("pressed");
 }
