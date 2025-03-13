@@ -38,7 +38,8 @@ function checkAnswer(currentLevel){
   console.log("userClickedPattern " + userClickedPattern);
     console.log("gamePattern " + gamePattern);
   console.log(gamePattern[currentLevel-1]);
-  if (gamePattern[currentLevel-1]==userClickedPattern){
+  var current_length = userClickedPattern.length
+  if (gamePattern[current_length]==userClickedPattern[current_length]){
     console.log("correct");
     if(userClickedPattern.length===level){
       userClickedPattern =[];
