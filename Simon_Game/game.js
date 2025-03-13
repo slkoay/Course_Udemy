@@ -6,7 +6,8 @@ var started = false;
 var level = 0;
 
 function nextSequence(){
-  level++;
+   userClickedPattern =[];
+   level++;
    $("#level-title").text("Level " + level);
    var randomNumber=Math.floor(Math.random()*4);
    var randomChosenColour = buttonColours[randomNumber];
@@ -22,7 +23,7 @@ $(".btn").click(function(){
   userClickedPattern.push(userChosenColour);
   playSound(userChosenColour);
   animatePress(userChosenColour);
-  checkAnswer(level);
+  checkAnswer(userClickedPattern.length-1);
 });
 
 
@@ -38,12 +39,12 @@ function checkAnswer(currentLevel){
   //console.log("userClickedPattern " + userClickedPattern);
   //console.log("gamePattern " + gamePattern);
   //console.log(gamePattern[currentLevel-1]);
-  var current_length = userClickedPattern.length
-  if (gamePattern[current_length]==userClickedPattern[current_length]){
+  if (gamePattern[currentLevel] === userClickedPattern[currentLevel]){
     console.log("correct");
-    if(userClickedPattern.length===level){
-      userClickedPattern =[];
-      nextSequence();
+    if(userClickedPattern.length===gamePattern.length){
+      setTimeout(function () {
+          nextSequence();
+        }, 1000);
     }
   }else{
     console.log("wrong");
