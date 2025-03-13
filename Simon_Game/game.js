@@ -54,6 +54,7 @@ function checkAnswer(currentLevel){
     $("#level-title").text("Game Over, Press Any Key to Restart");
     started = false;
     level = 0;
+    gamePattern = [];
   }
   
   
