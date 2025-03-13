@@ -13,6 +13,8 @@ function nextSequence(){
    audio.play();
 }
 
-$("button").click(function(event){
+$(".btn").click(function(event){
   console.log(event);
 });
+
+console.log($(".btn"));
