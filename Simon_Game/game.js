@@ -35,9 +35,9 @@ $(document).keypress(function() {
 });
 
 function checkAnswer(currentLevel){
-  console.log("userClickedPattern " + userClickedPattern);
-    console.log("gamePattern " + gamePattern);
-  console.log(gamePattern[currentLevel-1]);
+  //console.log("userClickedPattern " + userClickedPattern);
+  //console.log("gamePattern " + gamePattern);
+  //console.log(gamePattern[currentLevel-1]);
   var current_length = userClickedPattern.length
   if (gamePattern[current_length]==userClickedPattern[current_length]){
     console.log("correct");
