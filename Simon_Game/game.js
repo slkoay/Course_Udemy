@@ -35,16 +35,16 @@ $(document).keypress(function() {
 });
 
 function checkAnswer(currentLevel){
+  console.log("userClickedPattern " + userClickedPattern);
+    console.log("gamePattern " + gamePattern);
   if (gamePattern[currentLevel-1]===userClickedPattern){
     console.log("correct");
-    console.log("userClickedPattern " + userClickedPattern);
-    console.log("gamePattern " + gamePattern);
     if(userClickedPattern.length===level){
       userClickedPattern =[];
       nextSequence();
     }
   }else{
-    console.log("correct");
+    console.log("wrong");
   }
   
   
