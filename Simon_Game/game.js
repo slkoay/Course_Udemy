@@ -13,8 +13,8 @@ function nextSequence(){
    audio.play();
 }
 
-$(".btn").click(function(event){
-  userChosenColour = event.target.id
+$(".btn").click(function(){
+  userChosenColour = $(this).attr("id");
   console.log(userChosenColour);
 userClickedPattern.push(userChosenColour);
 
