@@ -13,5 +13,6 @@ function nextSequence(){
    audio.play();
 }
 
-$("button").click(function(event){alert("The paragraph was clicked.");});
-
+$("button").click(function(event){
+  console.log(event);
+});
