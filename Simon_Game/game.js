@@ -37,6 +37,7 @@ $(document).keypress(function() {
 function checkAnswer(currentLevel){
   console.log("userClickedPattern " + userClickedPattern);
     console.log("gamePattern " + gamePattern);
+  console.log(gamePattern[currentLevel-1]);
   if (gamePattern[currentLevel-1]===userClickedPattern){
     console.log("correct");
     if(userClickedPattern.length===level){
