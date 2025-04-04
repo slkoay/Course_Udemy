@@ -6,5 +6,5 @@ $(".btn").click(function(){
   
 });
 
-document.getElementById("demo").innerHTML = data;
+document.getElementById("demo").innerHTML = "The value of z is: " + data;
 
