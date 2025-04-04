@@ -6,3 +6,5 @@ $(".btn").click(function(){
   
 });
 
+document.getElementById("demo").innerHTML = data;
+
