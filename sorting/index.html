@@ -11,9 +11,9 @@
 <body>
     <h1>Sorting</h1>
     <img src="">
-    <input type="text" name="UserID" value=3 readonly>
-    <input type="text" name="UserName" value="" placeholder="User Name">
-    <input type="text" name="UserOccupation" value="" placeholder="User Occupation">
+    <input type="text" name="UserID" class="input userid" value="" readonly id="userid">
+    <input type="text" name="UserName" class="input UserName" value="" placeholder="User Name">
+    <input type="text" name="UserOccupation" class="input UserOccupation" value="" placeholder="User Occupation">
     <br></br>
     <label for="sort">Sort By:</label>
     <select name="type" id="type">
@@ -22,7 +22,7 @@
     <option value="UserOccupation">UserOccupation</option>
   </select>
   <br></br>
-  <input type="submit" value="sort">
+  <button class="btn sort">Sort</button>
   <button class="btn add">Add</button>
 
 <p id="demo"></p>
@@ -32,6 +32,69 @@
 
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src=".\index.js"></script>
+<script>
+  var data = [{"id":1, "UserName":"Doe", "UserOccupation":"TestOccu"}, {"id":2, "UserName":"Doe2", "UserOccupation":"TestOccu2"}];   //dummy data for testing
+  
+  $("input.userid")[0].value = data.length+1;   //Define userID in userID field base on length of arrray
+  
+  display_table();   //Display data in array in table form
+
+  function display_table(){        //Function to Display Table
+  
+  var h = "";
+  
+  for (i=0;i<data.length;i++){
+     h+="<tr><td>" + data[i]["id"] + "</td><td>" + data[i]["UserName"] + "</td><td>" + data[i]["UserOccupation"] +"</td></tr>";
+     $("p#demo").html("<table><tr><th>ID</th><th>UserName</th><th>UserOccupation</th></tr>" + h + "</table>");
+  }};
+  
+    
+    $("button.add").click(function(){   //Add event to Add button
+    
+      data.push({"id": data.length+1,"UserName": $("input.UserName").val(), "UserOccupation":$("input.UserOccupation").val()});  //push new value into array base on ID, UserName and Occupation key in by user
+
+      $("input.UserName")[0].value="";   //clear UserName field after complete push the value into array
+      $("input.UserOccupation")[0].value="";   //clear UserOccupation field after complete push the value into array
+      $("input.userid")[0].value=data.length+1;   //Increment ID by 1 after add
+
+      display_table();
+    });
+    
+    
+    $("button.sort").click(function(){   //Add event to Sort button
+      
+      var get_sort_type =  $("select#type").val();  //get sort type value
+
+      data.sort(function(a, b){  //Add in Sort algorithm into sort funcion
+        let x;
+        let y;
+        switch(get_sort_type) {
+          case "UserID":
+            console.log("In Switch Con: " + get_sort_type);
+            x = a.id;
+            y = b.id;
+            break;
+          case "UserName":
+            x = a.UserName.toLowerCase();
+            y = b.UserName.toLowerCase();
+            break;
+          case "UserOccupation":
+            x = a.UserOccupation.toLowerCase();
+            y = b.UserOccupation.toLowerCase();
+            break;
+          default:
+            console.log(keyvalue);
+        }
+      
+      if (x < y) {return -1;}
+      if (x > y) {return 1;}
+    return 0;
+      })
+      display_table();  //Call display table function to refresh the table
+    });
+    
+
+
+  </script>
   </body>
 </html>
