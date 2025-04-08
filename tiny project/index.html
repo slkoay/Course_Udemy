@@ -1,0 +1,44 @@
+<html dir="ltr" lang="en"><head>
+    <meta charset="utf-8">
+    <title>JQuery</title>
+    <style></style>
+    <link rel="stylesheet" href="style.css">
+</head><body>
+    <h1>Sorting</h1>
+
+    
+
+<button type="button" class="collapsible">2 Query Interpretation</button>
+<div class="content">
+  <p>No Interpretation </p><p>Vague Interpretation </p>
+<p>Single Interpretation</p>
+<button type="button" class="collapsible">Multiple Interpretation</button>
+<div class="content">
+    <p>Single Dominant Interpretation</p>
+    <p>Multiple Dominant Interpretations</p>
+</div>
+</div>
+    
+   
+
+
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}</script>
+  
+
+
+</body></html>
