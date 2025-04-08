@@ -1,31 +1,62 @@
 <html dir="ltr" lang="en"><head>
     <meta charset="utf-8">
     <title>JQuery</title>
-    <style></style>
+    <style>.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}</style>
     <link rel="stylesheet" href="style.css">
 </head><body>
     <h1>Sorting</h1>
 
     
-
-<button type="button" class="collapsible active">2 Query Interpretation</button>
-<div class="content" style="display: block;">
+<button type="button" class="collapsible">2 Query Examination</button>
+<div class="content" style="display: none;">
+<button type="button" class="collapsible">2.1 Query Interpretation</button>
+<div class="content" style="display: none;">
   <p>No Interpretation </p><p>Vague Interpretation </p>
 <p>Single Interpretation</p>
-<button type="button" class="collapsible active">Multiple Interpretation</button>
-<div class="content" style="display: block;">
+<button type="button" class="collapsible">Multiple Interpretation</button>
+<div class="content" style="display: none;">
     <p>Single Dominant Interpretation</p>
     <p>Multiple Dominant Interpretations</p>
 </div>
 </div>
     
    
-<button type="button" class="collapsible">2 Query Categorization
+<button type="button" class="collapsible">2.2 Query Categorization
 </button>
-<div class="content">
-    <p>test</p>
+<div class="content" style="display: none;">
+<p>Uninterpretable </p>
+<p>Opinion Seeking </p>
+<p>Personal </p>
+<p>Apple Product Help </p>
+<p>Health/Medical </p>
+<p>Food Preparation/ Consumption</p>
+<p>Legal </p>
+<p>Sensitive </p>
+<p>Time Sensitive </p>
+<p>None of the above / Other</p>
 </div>
-
+</div>
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>var coll = document.getElementsByClassName("collapsible");
@@ -43,6 +74,7 @@ for (i = 0; i < coll.length; i++) {
   });
 }</script>
   
+
 
 
 
